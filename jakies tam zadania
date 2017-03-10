@@ -1,0 +1,29 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+int main()
+
+{
+    char *wsk1;
+    char a;
+        float *tab[5]
+    wsk2=&a;
+    tab[0]=&f;
+
+
+    return 0;
+}
+
+char fun (int)
+char (*wf) (int)
+wf=fun;
+
+class punkt{
+int x,y;
+public
+wstaw
+wypisz
+void wypisz();
+
+}
