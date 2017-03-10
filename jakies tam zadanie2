@@ -1,0 +1,31 @@
+#include <iostream>
+
+using namespace std;
+class punkt{
+int x,y;
+public:
+void wypisz();
+void wstaw();
+};
+
+
+
+main()
+{
+
+}
+
+/////////////////funkcje skaldowe klasy punkt
+void punkt::wypisz()
+{
+    cout<<" x= " << x << " , y= " <<y << endl;
+
+}
+
+void punkt::wstaw()
+{
+    cout<<" x= " ;
+    cin>> x;
+    cout<<" y= " ;
+    cin>> y;
+}
