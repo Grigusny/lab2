@@ -8,10 +8,11 @@ void wypisz();
 void wstaw();
 };
 
-
-
 main()
 {
+    punkt x;
+    x.wstaw();
+    x.wypisz();
 
 }
 
