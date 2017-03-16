@@ -7,3 +7,68 @@ dodaj
 funkcja na dodawanie liczb zespolonych
 };
 przypomniec na wykladzie o wytlumaczenie wskaznika this
+
+
+
+#include <iostream>
+
+using namespace std;
+
+class punkt{
+	
+	int x,y;
+	public:
+		void ustaw(){
+			cout << "Podaj x: ";
+			cin >> x;
+			cout << "Podaj y: ";
+			cin >> y;
+		}
+		void wypisz(){
+			cout << "X wynosi: " << x << ", Y wynosi: " << y;
+		}
+};
+class ulamek{
+	
+	int l, m;
+	public:
+		void ustaw(){
+			cout << "Podaj licznik: ";
+			cin >> l;
+			cout << "Podaj mianownik: ";
+			cin >> m;
+		}
+		void wypisz(){
+			cout << "Ulamek wynosi: " << l << "/" << m;
+		}
+		void dodaj(ulamek u2){
+			
+			int sumaLicznik=0;
+			
+			if(m == u2.m){
+				sumaLicznik = l + u2.l;
+			}
+			else{
+			
+				l *= u2.m;
+				u2.l *= m;
+				
+				m *= u2.m;
+				
+				sumaLicznik = l + u2.l;
+			}
+			
+			cout << "Ulamek po dodaniu: " << sumaLicznik << "/" << m;
+		}
+};
+
+int main(){
+	ulamek x, y;
+	
+	x.ustaw();
+	y.ustaw();
+	
+	x.dodaj(y);
+	
+	return 0;
+}
