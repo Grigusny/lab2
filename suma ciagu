@@ -1,0 +1,44 @@
+#include <iostream>
+
+using namespace std;
+
+int elem_art(int a1, int v, int i);
+int elem_geo(int a1, int g, int i);
+
+int sumaCiagu(int a1, int param, int n, int (*wsk)(int,int,int));
+
+int main(){
+	
+	//cout << elem_art(1,2,3);
+	cout << "Suma ciagu wynosi: " << sumaCiagu(1,2,3,elem_geo);
+	
+	return 0;
+}
+int elem_art(int a1, int v, int i){
+	
+	int temp = a1;
+	for(int count=1; count < i; count++){
+		
+		temp += v;
+	}
+	return temp;
+}
+int elem_geo(int a1, int g, int i){
+	
+	int temp = a1;
+	for(int count=1; count < i; count++){
+		
+		temp *= g;
+	}
+	return temp;
+}
+int sumaCiagu(int a1, int param, int n, int (*wsk)(int,int,int)){
+	
+	int suma = a1;
+	for(int i=2; i < n+1; i++){
+		
+		suma += wsk(a1, param, i);
+		//cout << "suma: " << suma << " i: " << i << " wsk: "<<  wsk(a1, param, i) << endl;
+	}
+	return suma;	
+}
