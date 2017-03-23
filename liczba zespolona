@@ -1,0 +1,57 @@
+#include <iostream>
+
+using namespace std;
+class lzes {
+	int l, m;
+ public:
+ 	void wstaw(int i, int j);
+ 	void wstaw();
+ 	void wypisz();
+ 	lzes(int i=0, int j =0);
+ 	lzes dodaj( const lzes &a);
+ 	
+ 	
+};
+
+
+lzes z1(6,7), z2(7,7), z3;
+
+main()
+{   
+
+    
+    z1.wypisz();
+    z2.wypisz();
+    z3=z1.dodaj(z2);
+    z3.wypisz();
+	system("pause");
+}
+
+void lzes::wstaw(int i, int j)
+{
+	if (j != 0) {l=i; m=j;}
+}
+////////////////
+void lzes::wstaw()
+{
+int i,j; 
+cin >> i; cin>> j;
+if (j != 0) {l=i; m=j;}
+}
+//////////////////////
+void lzes::wypisz()
+{
+	cout << l << " + j" << m << endl;
+}
+///////////////////////
+lzes::lzes(int i, int j)
+{
+  if (j != 0) {l=i; m=j;}
+   else {l=1; m=1;}
+}
+///////////////////////////////////
+lzes lzes::dodaj( const lzes &a)
+{
+	return lzes(l+a.l, m+a.m);
+	
+}
