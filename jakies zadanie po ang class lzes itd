@@ -1,0 +1,56 @@
+#include "stdafx.h"
+#include <iostream>
+
+using namespace std;
+
+class lzes {
+	float re, im;
+
+public:
+	lzes Add(const lzes &other);
+
+	void Insert(float r, float i)
+	{
+		re = r;
+		im = i;
+	}
+
+	lzes Substract(const lzes &other)
+	{
+		lzes local;
+		local.re = re - other.re;
+		local.im = im - other.im;
+		return local;
+	}
+
+	void Print();
+};
+
+lzes lzes::Add(const lzes &other)
+{
+	lzes local;
+	local.re = re + other.re;
+	local.im = im + other.im;
+	return local;
+}
+void lzes::Print()
+{
+	cout << "Re = " << re << endl;
+	cout << "Im = " << im << endl;
+}
+
+lzes z1, z2, z3;
+
+int main()
+{
+	z1.Insert(2, 3);
+	z2.Insert(3, 7);
+	z3 = z1.Add(z2);
+	z3.Print();
+	z3 = z2.Substract(z1);
+	const lzes z4 = z2;
+	z3 = z2.Add(z4);
+	z3.Print();
+
+	return 0;
+}
