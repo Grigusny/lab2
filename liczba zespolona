@@ -55,3 +55,64 @@ lzes lzes::dodaj( const lzes &a)
 	return lzes(l+a.l, m+a.m);
 	
 }
+
+///////////////////////////////// po edycji :
+
+#include <iostream>
+
+using namespace std;
+class lzes {
+	int re, im;
+ public:
+ 	void wstaw(int i, int j);
+ 	void wstaw();
+ 	void wypisz();
+ 	lzes(int i=0, int j =0);
+ 	lzes dodaj( const lzes &a);
+
+
+};
+
+
+lzes z1(6,7), z2(7,7), z3;
+
+main()
+{
+
+    z1.wstaw();
+    z1.wypisz();
+    z2.wypisz();
+    z3=z1.dodaj(z2);
+    z3.wypisz();
+}
+
+void lzes::wstaw(int i, int j)
+{
+	re=i; im=j;
+}
+////////////////
+void lzes::wstaw()
+{
+cout << " re  = ";
+cin >> re;
+cout << " im  = ";
+cin>> im;
+}
+
+//////////////////////
+void lzes::wypisz()
+{
+    if (im < 0 )
+	     cout << re << " - j" << -im << endl;
+	else cout << re << " + j" <<  im << endl;
+}
+///////////////////////
+lzes::lzes(int i, int j)
+{
+  re =i; im=j;
+}
+///////////////////////////////////
+lzes lzes::dodaj( const lzes &a)
+{
+	return lzes(re+a.re, im+a.im);
+}
