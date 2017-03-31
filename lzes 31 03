@@ -2,3 +2,13 @@ statyczny licznik
 funkcja statyczna daje licznik
 konstruktory (licznik++)  z lista inicjalizacyjna
 ~ destruktor (licznik --)
+ 
+ main ()
+ {
+  {l.zes z1,z2;
+    {
+      {l.zes
+      } 
+        }wypisz();
+          }
+{
