@@ -1,0 +1,4 @@
+statyczny licznik
+funkcja statyczna daje licznik
+konstruktory (licznik++)  z lista inicjalizacyjna
+~ destruktor (licznik --)
