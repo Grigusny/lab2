@@ -1,0 +1,32 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+//////////////////konstruktor kopijacy
+class string1 {
+   int roz;
+   char * wsk;
+public:
+   string1(char t[]):roz(strlen(t)), wsk(new char [roz+1])
+       {strcpy(wsk,t);}
+   string1(const string1 &s):roz(s.roz), wsk(new char [roz+1])
+       {strcpy(wsk,s.wsk);}
+    void wypisz(){	cout << wsk << endl;}
+
+~ string1(){delete []wsk; cout << "kasuje " << endl<< endl;}
+};
+ 
+
+////////////////////////////////
+
+string1 s1 ("ala i ola");
+main()
+{
+    {
+       s1.wypisz();
+       string1 s2=s1;
+       
+	}
+	s1.wypisz();
+   system("pause");
+}
+
