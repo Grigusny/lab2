@@ -1,0 +1,32 @@
+	#include <iostream>
+	#include <cstring>
+	using namespace std;
+	class string1 {
+	  int roz;
+	  char * wsk;
+	 public:
+		string1 (int r=8):roz(((r-1)/8)+1), wsk (new char[(roz*8)+1]){ } 
+		string1 (const char t[]):roz( ( ( (strlen(t)) -1 )*8)+1), wsk (new char[(roz*8)+1])
+			 {strcpy(wsk, t);} 
+		friend string1 operator +(const string1 &a,  string1 &b)
+		{  string1 temp (a.roz+b.roz);
+		   strcpy(temp.wsk, a.wsk);
+		   strcat(temp.wsk, b.wsk);
+		   return temp;
+		}	     
+		~string1() {delete [] wsk;}
+		operator char * () {return wsk;	}
+	};
+
+	string1 s1("ala i ola ");
+	string1 s2(" oraz tola");
+	string1 s3(40);
+	char t[] = "ala";
+	main(){   
+		s3 = s1+s2;
+		s3=t;
+		s3 = s1 + t;
+		s3 = "Ala " + s1;
+		cout << s3;
+		system("pause");
+	}
