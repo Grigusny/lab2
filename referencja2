@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+
+class l_zes {
+	int re, im;
+public:
+  void wypisz();
+  l_zes dodaj (const l_zes&);
+  void wstaw(int i, int j)
+    {  this->re=i;
+             im=j;}	
+};
+
+l_zes z1;
+l_zes z2;
+l_zes z3;
+
+
+main()
+{
+	z1.wstaw(3,3);
+	z2.wstaw(2,2);
+	z3 = z1.dodaj(z2);
+	z3.wypisz();
+	const l_zes z2=z1;
+	z3 = z1.dodaj(z2);
+	z3.wypisz();
+	system("pause");
+}
+/////////////////////////////////////
+void l_zes::wypisz()
+{
+	cout << " re  " << re << " ,  im   " << this->im<<endl;
+}
+///////////////////////////////////
+
+inline l_zes l_zes::dodaj (const l_zes & a){
+	l_zes lok;
+	lok.re = a.re + re;
+	lok.im = a.im + im;
+	return lok; } 
