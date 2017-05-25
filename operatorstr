@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+class l_zes {
+	int re, im;
+	
+public:
+ void wypisz()
+	{cout << re;
+	 if (im > 0 ) cout << " + j" <<im <<endl;
+	 else cout << " - j" <<-im <<endl;
+	}
+ void wstaw(int i, int j)
+    {  this->re = i; 
+	   this->im = j;}	
+};
+
+l_zes z1, z2;
+
+main()
+{
+	
+	z1.wstaw(3,3);
+	z2.wstaw(2,-10);
+	z1.wypisz();
+	z2.wypisz(); 
+    system("pause");
+}
+
+
