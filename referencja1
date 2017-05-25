@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int a=4, b=5;
+
+int *wsk1;
+int* const wsk2=&b;
+
+int &ref=a;
+
+//void zmiana () 
+
+main()
+{
+	wsk1=&a;
+	cout << " *wsk2 "  << *wsk2 << endl;
+	*wsk2=32;
+	cout << " *wsk2 "  << *wsk2 << endl;
+	// wsk2=&a; 
+	cout << " a = "  << a << endl;
+	ref=b;
+	cout << " a = "  << a << endl;
+	system("pause");
+}
+
