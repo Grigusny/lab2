@@ -1,0 +1,32 @@
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+class string2{
+    int roz;
+    char *wsk;
+    public:
+	string2 (const char t[]):roz((((strlen(t))-1)/8)+1), wsk (new char[(roz*8)+1])
+    {
+        strcpy(wsk, t);
+    }
+
+    operator char*()
+    {
+        return wsk;
+    }
+
+    operator int()
+    {
+        return roz;
+    }
+};
+
+string2 s("ABC");
+
+main()
+{
+    cout << (char*)s << endl;
+    cout << (int)s << endl;
+}
