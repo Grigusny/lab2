@@ -1,0 +1,44 @@
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+class l_zes{
+    float re, im;
+    public:
+    l_zes (float i=0, float j=0): re(i), im(j) {}
+
+
+    friend l_zes operator+ (const l_zes&, const l_zes&);
+    void wypisz();
+};
+
+l_zes z1(1,1);
+l_zes z2(2,2);
+l_zes z3;
+main()
+{
+    float a=2.5;
+
+    z1.wypisz();
+    z2.wypisz();
+    
+    z3 = z1+z2; 
+
+    z1=z2+a;
+    z2=a+z1;
+
+    z1.wypisz();
+    z2.wypisz();
+
+}
+
+l_zes operator+ ( const l_zes& a, const l_zes& b)
+{
+  return l_zes(a.re + b.re, a.im + b.im);
+}
+
+void l_zes::wypisz()
+{
+	cout << this->re << " + " << this->im << "i" << endl;
+}
